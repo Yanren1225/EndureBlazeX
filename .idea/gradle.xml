@@ -13,6 +13,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/base/activity" />
+            <option value="$PROJECT_DIR$/base/fragment" />
+            <option value="$PROJECT_DIR$/ktx" />
+            <option value="$PROJECT_DIR$/ktx/Context" />
+            <option value="$PROJECT_DIR$/ktx/String" />
+            <option value="$PROJECT_DIR$/ktx/TextView" />
+            <option value="$PROJECT_DIR$/ktx/Toast" />
+            <option value="$PROJECT_DIR$/util" />
+            <option value="$PROJECT_DIR$/util/SharedPreferences" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
