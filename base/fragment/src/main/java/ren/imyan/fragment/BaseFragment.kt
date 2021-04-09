@@ -59,7 +59,7 @@ abstract class BaseFragment<T : ViewBinding, B : ViewModel> : Fragment() {
     private fun initLoadData() {
         if (isViewOK && isFirst) {
             //加载数据时判断是否完成view的初始化，以及是不是第一次加载此数据
-            loadDate()
+            loadData()
             //加载第一次数据后改变状态，后续不再重复加载
             isFirst = false
         }
@@ -68,7 +68,7 @@ abstract class BaseFragment<T : ViewBinding, B : ViewModel> : Fragment() {
     /**
      * fragment 实现懒加载的方法，即在这里加载数据
      */
-    abstract fun loadDate()
+    abstract fun loadData()
 
     /**
      * 释放数据
