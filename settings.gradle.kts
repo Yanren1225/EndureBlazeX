@@ -1,3 +1,4 @@
+include(":adapter:RecyclerViewAdapter")
 rootProject.buildFileName = "build.gradle.kts"
 include(":util:SharedPreferences")
 include(":ktx:Toast")

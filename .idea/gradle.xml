@@ -11,6 +11,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/adapter" />
+            <option value="$PROJECT_DIR$/adapter/RecyclerViewAdapter" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/base/activity" />
             <option value="$PROJECT_DIR$/base/fragment" />
