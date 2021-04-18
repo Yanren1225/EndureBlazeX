@@ -3,6 +3,7 @@ package ren.imyan.recyclerviewadapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.BaseAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +19,8 @@ abstract class BaseRecyclerViewAdapter<T, B : ViewDataBinding>(
     private var dataList: MutableList<T>,
     private var layoutRes: Int
 ) : RecyclerView.Adapter<BaseRecyclerViewAdapter<T, B>.ViewHolder>() {
-    private var itemClickListener: ((itemData: T, itemBinding: B) -> Unit)? = null
+
+    private var itemClickListener: (B.(itemData: T) -> Unit)? = null
     private var isLoading = false
     lateinit var context: Context
 
@@ -47,7 +49,7 @@ abstract class BaseRecyclerViewAdapter<T, B : ViewDataBinding>(
         fun bind(itemData: T) {
             bindItem(itemBinding, itemData)
             itemBinding.executePendingBindings()
-            itemClickListener?.invoke(itemData, itemBinding)
+            itemClickListener?.invoke(itemBinding, itemData)
             bindAfterExecute(itemBinding, itemData)
         }
 
@@ -57,7 +59,7 @@ abstract class BaseRecyclerViewAdapter<T, B : ViewDataBinding>(
 
     open fun bindAfterExecute(itemBinding: B, itemData: T) {}
 
-    fun setItemClick(click: (itemData: T, itemBinding: B) -> Unit) {
+    fun setItemClick(click: B.(itemData: T) -> Unit) {
         itemClickListener = click
     }
 
